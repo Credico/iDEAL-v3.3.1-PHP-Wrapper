@@ -78,13 +78,13 @@ Ideal_SEPA::requestTransaction()
 Ideal_SEPA::requestTransaction($issuerId, $purchaseId, $amount, $description, $entranceCode, $merchantReturnUrl = false, $expirationPeriod = 0)
 This method starts a transaction
 
-$issuerId: the value retrieved by Ideal_SEPA::getIssuerList()
-$purchaseId: a unique identification of the order in the merchants system (max 16 chars)
-$amount: the amount payable in euros (with a periode (.) used as decimal separator)
-$description: description of the order (max 32 chars)
-$entranceCode: an authentication identifier to facilitate continuation of the session between Merchant and Consumer
-$merchantReturnUrl: can be used to overwrite MERCHANTRETURNURL from config.conf
-$expirationPeriod: can be used to overwrite EXPIRATIONPERIOD from config.conf
+- $issuerId: the value retrieved by Ideal_SEPA::getIssuerList()
+- $purchaseId: a unique identification of the order in the merchants system (max 16 chars)
+- $amount: the amount payable in euros (with a periode (.) used as decimal separator)
+- $description: description of the order (max 32 chars)
+- $entranceCode: an authentication identifier to facilitate continuation of the session between Merchant and Consumer
+- $merchantReturnUrl: can be used to overwrite MERCHANTRETURNURL from config.conf
+- $expirationPeriod: can be used to overwrite EXPIRATIONPERIOD from config.conf
 
 ---------------------------------------
 Ideal_SEPA::requestTransactionStatus()
@@ -93,4 +93,4 @@ Ideal_SEPA::requestTransactionStatus()
 Ideal_SEPA::requestTransactionStatus($transactionId)
 This method returns the transaction status
 
-$transactionId: the transactionId (will be send as $_GET-parameter to the returnurl: requestTransactionStatus.php?trxid=_TRANSACTIONID_&ec=_ENTRANCECODE_
+- $transactionId: the transactionId (will be send as $_GET-parameter to the returnurl: requestTransactionStatus.php?trxid=_TRANSACTIONID_&ec=_ENTRANCECODE_
