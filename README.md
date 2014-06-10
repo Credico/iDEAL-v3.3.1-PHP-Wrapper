@@ -34,7 +34,7 @@ Step 1: CONFIGURE THE CLASS
 2. Create a merchant private key using an openSSL tool and this command (dont forget to change 'password'): 
 openssl genrsa -aes128 -out private_key.pem -passout pass:password 2048
 
-3. Create a merchant private certificate using an openSSL tool and this command (again: don't forget to change 'password'):
+3. Create a merchant private certificate using an openSSL tool and this command (again: don't forget to change 'password' to the same one used in step 2):
 openssl req -x509 -sha256 -new -key private_key.pem -passin pass:password -days 1825 -out private_cert.cer
 
 4. Place both files (private_key.pem & private_cert.cer) inside the 'certificates' folder.
@@ -43,7 +43,7 @@ openssl req -x509 -sha256 -new -key private_key.pem -passin pass:password -days 
 
 6. Login to your iDEAL dashboard and download the latest iDeal_v3.cer provided by your bank. There are three files available in the 'certificates' folder, but they are about to expire, so best practice is to always download the latest.
 
-7. While you're in your iDeal dashboard, quickly upload the "private_key.cer" file to your account.
+7. While you're in your iDeal dashboard, quickly upload the "private_cert.cer" file to your account. It depends on your dashboard where to upload, but usually it is somewhere under 'My account' -> 'Security settings'. 'private_cert.cer' is the file generated in step 3.
 
 7. Open /public_html/includes/idealsepa/Connector/config.conf and change the parameters to match your needs *
 
