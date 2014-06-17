@@ -38,11 +38,11 @@
  * We just need some additional information (from the order) to request a transaction.
  */
  
-	$sOrderId 			= mktime(); 			// an orderId, should be unique for each transaction.
+	$sOrderId 		= mktime(); 			// an orderId, should be unique for each transaction.
 	$sOrderDescription 	= "Order #".$sOrderId; 	// an order description that is shown on the payment page
 	$fOrderAmount 		= 9.99;					// the order total in EURO with 2 decimals
-	$sIssuerId 			= $_POST['issuerId'];	// the issuerId as choosen in step 1
-	$sReturnUrl			= 'http://www.mysite.com/idealsepa/return.php';
+	$sIssuerId 		= $_POST['issuerId'];	// the issuerId as choosen in step 1
+	$sReturnUrl		= 'http://www.mysite.com/idealsepa/return.php';
 	$sExpirationPeriod	= 1800;					// Payment will expire after 30 minutes
 	
 	// Then we need to create an entrance code we generate ourselfs, must be unique for each transaction you start!!
