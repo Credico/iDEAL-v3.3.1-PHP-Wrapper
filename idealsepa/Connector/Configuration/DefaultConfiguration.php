@@ -29,6 +29,8 @@ class DefaultConfiguration implements IConnectorConfiguration
 
     private $logFile = "logs/connector.log";
     private $logLevel = LogLevel::Error;
+    
+    private $rootPath = '';
 
     function __construct($path)
     {
@@ -187,12 +189,12 @@ class DefaultConfiguration implements IConnectorConfiguration
 
     public function getAcquirerCertificatePath()
     {
-        return $this->acquirerCertificate;
+        return $this->rootPath . $this->acquirerCertificate;
     }
 
     public function getCertificatePath()
     {
-        return $this->certificate;
+        return $this->rootPath . $this->certificate;
     }
 
     public function getExpirationPeriod()
@@ -212,7 +214,7 @@ class DefaultConfiguration implements IConnectorConfiguration
 
     public function getPrivateKeyPath()
     {
-        return $this->privateKey;
+        return $this->rootPath . $this->privateKey;
     }
 
     public function getMerchantReturnURL()
@@ -276,5 +278,10 @@ class DefaultConfiguration implements IConnectorConfiguration
     public function getLogLevel()
     {
         return $this->logLevel;
+    }
+    
+    public function setRootPath($rootPath)
+    {
+    	$this->rootPath = $rootPath;
     }
 }
